@@ -1,6 +1,10 @@
-new
-hola mundo
-
-
-ajuste remoto
-ajuste remoto
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+            steps {
+                echo 'hola mundo'
+            }
+        }
+    }
+}
