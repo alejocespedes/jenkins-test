@@ -2,6 +2,7 @@ pipeline {
     agent any
     parameters {
          string(name: 'PERSON', defaultValue: '', description: 'Who should I say hello to?')
+         choice(name:'seleccion', choices ['1','2'])
          text(name: 'NAME', defaulValue:'', descrition:'Name')
     }
     stages {
