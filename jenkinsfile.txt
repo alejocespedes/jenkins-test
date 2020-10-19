@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
          string(name: 'PERSON', defaultValue: '', description: 'Who should I say hello to?')
-         text(name: 'NAME', defaulValue:'')
+         text(name: 'NAME', defaulValue:'', descrition:'Name')
     }
     stages {
         stage('build') {
