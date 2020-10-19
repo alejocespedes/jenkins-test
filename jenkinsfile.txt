@@ -1,3 +1,5 @@
+def gv
+
 pipeline {
     agent any
     parameters {
@@ -8,7 +10,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "hola BUILD ${params.PERSON}"
+                script{
+                    gv.funcion()
+                }
             }
         }
         stage('TEST') {
