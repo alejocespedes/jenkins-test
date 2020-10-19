@@ -8,7 +8,17 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "hola ${params.NAME}"
+                echo "hola BUILD ${params.PERSON}"
+            }
+        }
+        stage('TEST') {
+            steps {
+                echo "hola TEST ${params.NOMBRE}"
+            }
+        }
+        stage('IMPLEMENTATION') {
+            steps {
+                echo "hola IMPLE${params.SELECCION}"
             }
         }
     }
