@@ -8,6 +8,13 @@ pipeline {
          choice(name: 'SELECCION', choices:['1','2'])
     }
     stages {
+        stage('init') {
+            steps {
+                script{
+                    gv = load "main.groovy"
+                }
+            }
+        }
         stage('build') {
             steps {
                 script{
