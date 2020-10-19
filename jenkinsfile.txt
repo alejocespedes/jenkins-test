@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "hola mundo"
+                echo "hola mundo ya estamos con git hub :)"
             }
         }
     }
