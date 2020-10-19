@@ -2,8 +2,8 @@ pipeline {
     agent any
     parameters {
          string(name: 'PERSON', defaultValue: '', description: 'Who should I say hello to?')
-         choice(name:'seleccion', choices ['1','2'], description:'select')
-         text(name: 'NAME', defaulValue:'', descrition:'Name', description 'texto')
+         text(name: 'NOMBRE', defaultValue: '')
+         choice(name: 'SELECCION', choices:['1','2'])
     }
     stages {
         stage('build') {
