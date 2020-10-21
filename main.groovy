@@ -4,16 +4,17 @@ def funcion (){
 }
 
 def getRemote () {
-    withCredentials([usernamePassword(credentialsId: 'ubuntu', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
+    withCredentials([usernamePassword(credentialsId: 'ubuntu', passwordVariable: 'password', usernameVariable: 'userName')]) {
         def remote = [:]
         remote.name = 'remote'
         remote.host = "${params.HOST}"
-        remote.user = "$USERNAME"
-        remote.password = "$PASSWORD"
+        remote.user = userName
+        remote.password = password
         remote.allowAnyHosts = true
 
         return remote
-}   
+    }   
+}
 
 def comandos(){
   def remote = getRemote()
