@@ -6,7 +6,7 @@ def funcion (){
 def getRemote () {
         def remote = [:]
         remote.name = 'remote'
-        remote.host = "192.168.30.100"
+        remote.host = "${params.HOST}"
         remote.user = "docker"
         remote.password = "tcuser"
         remote.allowAnyHosts = true
@@ -15,12 +15,8 @@ def getRemote () {
 }   
 
 def comandos(){
-  println('ejecuto comando 1')
   def remote = getRemote()
-  println('ejecuto comando 2')
   sshCommand remote: remote, command: 'docker exec ubuntu bin/sh -c "cd /home && . ./prueba.sh"'
-  println('ejecuto comando')
-  
 }
 
  return this

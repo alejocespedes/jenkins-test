@@ -4,6 +4,8 @@ pipeline {
     agent any
     parameters {
          string(name: 'PERSON', defaultValue: '', description: 'Who should I say hello to?')
+         string(name: 'HOST', defaultValue: '', description: 'SSH Host')
+         
          text(name: 'NOMBRE', defaultValue: '')
          choice(name: 'SELECCION', choices:['1','2'])
     }
