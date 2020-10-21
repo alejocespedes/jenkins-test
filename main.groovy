@@ -4,11 +4,12 @@ def funcion (){
 }
 
 def getRemote () {
+    withCredentials([usernamePassword(credentialsId: 'ubuntu', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
         def remote = [:]
         remote.name = 'remote'
         remote.host = "${params.HOST}"
-        remote.user = "docker"
-        remote.password = "tcuser"
+        remote.user = "$USERNAME"
+        remote.password = "$PASSWORD"
         remote.allowAnyHosts = true
 
         return remote
