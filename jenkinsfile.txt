@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script{
                     gv.funcion()
-                    gv.remote()
+                    gv.comandos()
                 }
             }
         }
