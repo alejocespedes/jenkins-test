@@ -18,10 +18,9 @@ def comandos(){
   println('ejecuto comando 1')
   def remote = getRemote()
   println('ejecuto comando 2')
-  sshCommand remote: remote, command: "docker exec -it ubuntu bash"
-  sshCommand remote: remote, command: "cd /home"
+  sshCommand remote: remote, command: 'docker exec ubuntu bash -c "cd /home ./prueba.sh"'
   println('ejecuto comando')
-  sshScript remote: remote, script: "prueba.sh"
+  
 }
 
  return this
