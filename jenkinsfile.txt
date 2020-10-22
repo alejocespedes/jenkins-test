@@ -5,6 +5,7 @@ pipeline {
     parameters {
          string(name: 'PERSON', defaultValue: '', description: 'Who should I say hello to?')
          string(name: 'HOST', defaultValue: '', description: 'SSH Host')
+         string(name: 'URL', defaultValue: '', description: 'URL git')
          text(name: 'NOMBRE', defaultValue: '')
          choice(name: 'SELECCION', choices:['1','2'])
     }
@@ -21,6 +22,7 @@ pipeline {
                 script{
                     gv.funcion()
                     gv.comandos()
+                    gv.downloadfile()
                 }
             }
         }
@@ -31,7 +33,7 @@ pipeline {
         }
         stage('IMPLEMENTATION') {
             steps {
-                echo "hola IMPLE${params.SELECCION}"
+                echo "hola IMPLE ${params.SELECCION}"
             }
         }
     }

@@ -21,4 +21,7 @@ def comandos(){
   sshCommand remote: remote, command: 'docker exec ubuntu bin/sh -c "cd /home && . ./prueba.sh"'
 }
 
+def downloadfile(){
+    ["git", "clone", "${params.URL}"].execute()
+}
  return this
