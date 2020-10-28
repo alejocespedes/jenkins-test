@@ -21,8 +21,9 @@ pipeline {
             steps {
                 script{
                     gv.funcion()
-                    gv.comandos()
                     gv.downloadfile()
+                    gv.copyfiletodest()
+                    gv.comandos()
                 }
             }
         }
